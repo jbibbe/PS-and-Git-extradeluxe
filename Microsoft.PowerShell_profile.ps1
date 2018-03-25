@@ -1,16 +1,18 @@
-
+# start agents
 Start-SshAgent
 
+# import modules
 Import-Module Get-ChildItemColor
 
 Import-Module posh-git
 
 Import-Module PSReadLine
 
+# set alliasses
 Set-Alias l Get-ChildItemColor -option AllScope
 Set-Alias ls Get-ChildItemColorFormatWide -option AllScope
 
-
+# set deluxe git prompt
 $global:GitPromptSettings.BeforeText = '['
 $global:GitPromptSettings.AfterText  = '] '
 
@@ -52,7 +54,7 @@ function prompt {
 }
 
 
-
+# set history options
 Set-PSReadLineOption -HistoryNoDuplicates
 Set-PSReadLineOption -HistorySearchCursorMovesToEnd
 Set-PSReadLineOption -HistorySaveStyle SaveIncrementally
@@ -62,9 +64,6 @@ Set-PSReadLineOption -MaximumHistoryCount 4000
 Set-PSReadlineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
 
-# Tab completion
+# tab completion
 Set-PSReadlineKeyHandler -Chord 'Shift+Tab' -Function Complete
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
-
-
-
