@@ -1,0 +1,20 @@
+[core]
+	autocrlf = true
+	excludesfile = C:\\path\\to\\gitignore_global.txt
+[user]
+	name = John Doe
+	email = john.doe@mywebspace.com
+	signingkey = your GPG/PGP signing key
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[alias]
+	fuckit = !sh -c 'git fetch upstream && git checkout master && git reset --hard upstream/master && git push origin master --force' -
+[winUpdater]
+	recentlySeenVersion = 2.16.2.windows.1
+[commit]
+	gpgsign = true
+[gpg]
+	program = C:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe
