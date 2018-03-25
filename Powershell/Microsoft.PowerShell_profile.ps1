@@ -64,6 +64,6 @@ Set-PSReadLineOption -MaximumHistoryCount 4000
 Set-PSReadlineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
 
-# tab completion
+# Tab completion
 Set-PSReadlineKeyHandler -Chord 'Shift+Tab' -Function Complete
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
